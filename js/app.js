@@ -1643,13 +1643,13 @@
                 return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
             },
             phoneTest(formRequiredItem) {
-                return !/^(\+\d{1,3})?(\(\d+\))?\d+(-\d+)*$/.test(formRequiredItem.value);
+                return !/^(\+\d{1,3})?[\s\-()]?\d{1,4}[\s\-()]?\d{1,4}[\s\-()]?\d{1,9}$/.test(formRequiredItem.value.trim());
             },
             nameTest(formRequiredItem) {
                 return !/[a-zA-Zа-яА-ЯА-ЩЬЮЯҐЄІЇа-щьюяґєії]{2}$/.test(formRequiredItem.value);
             },
             commentTest(formRequiredItem) {
-                return !/^.{10,}$/.test(formRequiredItem.value);
+                return !/^.{10,}$/.test(formRequiredItem.value.trim());
             }
         };
         function formSubmit() {
@@ -1716,6 +1716,25 @@
             function formLogging(message) {
                 FLS(`[Форми]: ${message}`);
             }
+        }
+        function formQuantity() {
+            document.addEventListener("click", (function(e) {
+                let targetElement = e.target;
+                if (targetElement.closest("[data-quantity-plus]") || targetElement.closest("[data-quantity-minus]")) {
+                    const valueElement = targetElement.closest("[data-quantity]").querySelector("[data-quantity-value]");
+                    let value = parseInt(valueElement.value);
+                    if (targetElement.hasAttribute("data-quantity-plus")) {
+                        value++;
+                        if (+valueElement.dataset.quantityMax && +valueElement.dataset.quantityMax < value) value = valueElement.dataset.quantityMax;
+                    } else {
+                        --value;
+                        if (+valueElement.dataset.quantityMin) {
+                            if (+valueElement.dataset.quantityMin > value) value = valueElement.dataset.quantityMin;
+                        } else if (value < 1) value = 1;
+                    }
+                    targetElement.closest("[data-quantity]").querySelector("[data-quantity-value]").value = value;
+                }
+            }));
         }
         function isObject(obj) {
             return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
@@ -6033,6 +6052,33 @@
                 document.querySelector(".swiper-button-prev").addEventListener("click", scrollActiveThumbIntoView);
                 document.querySelector(".swiper-button-next").addEventListener("click", scrollActiveThumbIntoView);
             }
+            var quickOrderSliders = document.querySelectorAll(".quick-order__slider");
+            if (quickOrderSliders.length > 0) quickOrderSliders.forEach((function(slider, index) {
+                new swiper_core_Swiper(slider, {
+                    modules: [ Navigation ],
+                    observer: true,
+                    observeParents: true,
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    speed: 800,
+                    loop: true,
+                    navigation: {
+                        prevEl: `.quick-order__swiper-button-prev`,
+                        nextEl: `.quick-order__swiper-button-next`
+                    },
+                    on: {
+                        init: function(swiper) {
+                            const allSlides = slider.closest(".quick-order").querySelector(".quick-order__fraction--all");
+                            const allSlidesItems = slider.querySelectorAll(".quick-order__slide:not(.swiper-slide-duplicate)");
+                            allSlides.innerHTML = allSlidesItems.length.toString();
+                        },
+                        slideChange: function(swiper) {
+                            const currentSlide = slider.closest(".quick-order").querySelector(".quick-order__fraction--current");
+                            currentSlide.innerHTML = (swiper.realIndex + 1).toString();
+                        }
+                    }
+                });
+            }));
         }
         window.addEventListener("DOMContentLoaded", (function(e) {
             initSliders();
@@ -6950,28 +6996,30 @@
         function headerScroll() {
             addWindowScrollEvent = true;
             const header = document.querySelector("header.header");
-            const headerShow = header.hasAttribute("data-scroll-show");
-            const headerShowTimer = header.dataset.scrollShow ? header.dataset.scrollShow : 500;
-            const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
-            let scrollDirection = 0;
-            let timer;
-            document.addEventListener("windowScroll", (function(e) {
-                const scrollTop = window.scrollY;
-                clearTimeout(timer);
-                if (scrollTop >= startPoint) {
-                    !header.classList.contains("_header-scroll") ? header.classList.add("_header-scroll") : null;
-                    if (headerShow) {
-                        if (scrollTop > scrollDirection) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null; else !header.classList.contains("_header-show") ? header.classList.add("_header-show") : null;
-                        timer = setTimeout((() => {
-                            !header.classList.contains("_header-show") ? header.classList.add("_header-show") : null;
-                        }), headerShowTimer);
+            if (header) {
+                const headerShow = header.hasAttribute("data-scroll-show");
+                const headerShowTimer = header.dataset.scrollShow ? header.dataset.scrollShow : 500;
+                const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
+                let scrollDirection = 0;
+                let timer;
+                document.addEventListener("windowScroll", (function(e) {
+                    const scrollTop = window.scrollY;
+                    clearTimeout(timer);
+                    if (scrollTop >= startPoint) {
+                        !header.classList.contains("_header-scroll") ? header.classList.add("_header-scroll") : null;
+                        if (headerShow) {
+                            if (scrollTop > scrollDirection) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null; else !header.classList.contains("_header-show") ? header.classList.add("_header-show") : null;
+                            timer = setTimeout((() => {
+                                !header.classList.contains("_header-show") ? header.classList.add("_header-show") : null;
+                            }), headerShowTimer);
+                        }
+                    } else {
+                        header.classList.contains("_header-scroll") ? header.classList.remove("_header-scroll") : null;
+                        if (headerShow) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null;
                     }
-                } else {
-                    header.classList.contains("_header-scroll") ? header.classList.remove("_header-scroll") : null;
-                    if (headerShow) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null;
-                }
-                scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
-            }));
+                    scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
+                }));
+            }
         }
         setTimeout((() => {
             if (addWindowScrollEvent) {
@@ -8981,6 +9029,7 @@ PERFORMANCE OF THIS SOFTWARE.
             autoHeight: false
         });
         formSubmit();
+        formQuantity();
         headerScroll();
     })();
 })();
