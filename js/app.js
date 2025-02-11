@@ -1065,6 +1065,19 @@
             bodyUnlock();
             document.documentElement.classList.remove("menu-open");
         }
+        function menuFilters() {
+            const menuInterBody = document.querySelector(".filters");
+            if (document.querySelector(".filters-button")) document.addEventListener("click", (function(e) {
+                if (e.target.closest(".filters-button")) {
+                    bodyLockToggle();
+                    document.documentElement.classList.toggle("menu-filters");
+                } else if (!menuInterBody.contains(e.target)) menuCloseFilters();
+            }));
+        }
+        function menuCloseFilters() {
+            bodyUnlock();
+            document.documentElement.classList.remove("menu-filters");
+        }
         function showMore() {
             window.addEventListener("load", (function(e) {
                 const showMoreBlocks = document.querySelectorAll("[data-showmore]");
@@ -7021,6 +7034,38 @@
                 }));
             }
         }
+        function asideScroll() {
+            var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            if (windowWidth < 1386) {
+                addWindowScrollEvent = true;
+                const header = document.querySelector(".filters__top");
+                if (header) {
+                    const headerShow = header.hasAttribute("data-scroll-show");
+                    const headerShowTimer = header.dataset.scrollShow ? header.dataset.scrollShow : 500;
+                    const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
+                    let scrollDirection = 0;
+                    let timer;
+                    document.addEventListener("windowScroll", (function(e) {
+                        const scrollTop = window.scrollY;
+                        clearTimeout(timer);
+                        if (scrollTop >= startPoint) {
+                            !header.classList.contains("_aside-scroll") ? header.classList.add("_aside-scroll") : null;
+                            if (headerShow) {
+                                if (scrollTop > scrollDirection) header.classList.contains("_aside-show") ? header.classList.remove("_aside-show") : null; else !header.classList.contains("_header-show") ? header.classList.add("_aside-show") : null;
+                                timer = setTimeout((() => {
+                                    !header.classList.contains("_aside-show") ? header.classList.add("_aside-show") : null;
+                                }), headerShowTimer);
+                            }
+                        } else {
+                            header.classList.contains("_aside-scroll") ? header.classList.remove("_aside-scroll") : null;
+                            if (headerShow) header.classList.contains("_aside-show") ? header.classList.remove("_aside-show") : null;
+                        }
+                        scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
+                    }));
+                }
+            }
+        }
+        window.addEventListener("resize", asideScroll);
         setTimeout((() => {
             if (addWindowScrollEvent) {
                 let windowScroll = new Event("windowScroll");
@@ -9021,6 +9066,7 @@ PERFORMANCE OF THIS SOFTWARE.
         }));
         window["FLS"] = false;
         menuInit();
+        menuFilters();
         spollers();
         tabs();
         showMore();
@@ -9031,5 +9077,6 @@ PERFORMANCE OF THIS SOFTWARE.
         formSubmit();
         formQuantity();
         headerScroll();
+        asideScroll();
     })();
 })();

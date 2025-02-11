@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Главная</title>
+	<title>Каталог</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -12,7 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 </head>
 
-<body class="load">
+<body>
 	<div class="wrapper">
 		<header data-scroll="40" data-scroll-show class="header">
 			<div class="header__info">
@@ -318,660 +318,337 @@
 			</div>
 		</header>
 		<main>
-			<section class="main">
-				<div class="main__container">
-					<div class="main__wrapper">
-						<h1 class="main__title">Передовые технологии здоровья и долголетия</h1>
-						<a href="" class="main__link btn _icon-arrow-link">Перейти в каталог</a>
-					</div>
-					<div class="main__bg">
-						<picture>
-							<source media="(max-width: 767.98px)" srcset="img/main/main_image-mob.webp" />
-							<source media="(max-width: 991.98px)" srcset="img/main/main_image-pc.webp" />
-							<source media="(min-width: 991.98px)" srcset="img/main/main_image-pc.webp" />
-							<img src="img/main/main_image-pc.webp" alt="" />
-						</picture>
-					</div>
+			<section class="breadcrumb">
+				<div class="breadcrumb__container">
+					<ul class="breadcrumb__list">
+						<li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Главная</a></li>
+						<li class="breadcrumb__item"><span class="breadcrumb__active">Каталог</span></li>
+					</ul>
 				</div>
 			</section>
-			<section class="banner-product">
-				<div class="banner-product__container">
-					<div class="banner-product__wrapper">
-						<a href="" class="banner-product__link">
-							<div class="banner-product__content">
-								<h2 class="banner-product__title">Скидки до 50%</h2>
-								<div class="banner-product__button _icon-arrow-link">К покупкам</div>
+			<section class="catalogue">
+				<div class="catalogue__container">
+					<h3 class="filters__title--top">Каталог</h3>
+					<div data-scroll="190" data-scroll-show class="filters__top">
+						<div data-da=".catalogue__container,767.98,2" class="filters__item filters__item--da">
+							<div class="filters__title">Сортировка<span>:</span></div>
+							<div class="filters__row row-filters">
+								<div class="row-filters__item">
+									<input checked class="row-filters__radio" type="radio" id="price-mob-1" name="price-mob">
+									<label for="price-mob-1" class="row-filters__label">Популярные</label>
+								</div>
+								<div class="row-filters__item">
+									<input class="row-filters__radio" type="radio" id="price-mob-2" name="price-mob">
+									<label for="price-mob-2" class="row-filters__label">Дешевле</label>
+								</div>
+								<div class="row-filters__item">
+									<input class="row-filters__radio" type="radio" id="price-mob-3" name="price-mob">
+									<label for="price-mob-3" class="row-filters__label">Более дорогие</label>
+								</div>
 							</div>
-							<div class="banner-product__image ibg lazy_image">
-								<img data-src="img/main/banners_01.webp" alt="">
-							</div>
-						</a>
-						<a href="" class="banner-product__link">
-							<div class="banner-product__content">
-								<h2 class="banner-product__title">Новое поступление</h2>
-								<div class="banner-product__button _icon-arrow-link">К покупкам</div>
-							</div>
-							<div class="banner-product__image ibg lazy_image">
-								<img data-src="img/main/banners_02.webp" alt="">
-							</div>
-						</a>
+						</div>
+						<button type="button" class="filters__button filters-button _icon-filter"><span>Фильтр</span>
+						</button>
 					</div>
-				</div>
-			</section>
-			<section class="product">
-				<div class="product__container">
-					<div class="product__slider swiper">
-						<div class="product__top">
-							<h3 class="product__title--top">Популярные товары</h3>
-							<div class="product__block">
-								<a href="" class="product__link">Посмотреть все</a>
-								<button type="button" class="product__swiper-button product__swiper-button-prev _icon-arrow_btn"></button>
-								<button type="button" class="product__swiper-button product__swiper-button-next _icon-arrow_btn"></button>
-							</div>
-						</div>
-						<div class="product__wrapper swiper-wrapper">
-							<div class="product__slide swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/1.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__add _icon-bag added">Добавить в корзину</button>
-											<button type="button" class="product__favorite _icon-favorite-1 active"></button>
+					<div class="catalogue__wrapper">
+						<div class="catalogue__filters filters">
+							<div class="filters__wrapper">
+								<div class="filters__mob--row">
+									<div class="filters__mob--title">Фильтр</div>
+									<button type="button" class="filters__mob--button filters-button _icon-del"></button>
+								</div>
+								<div class="filters__layout">
+									<div class="filters__list">
+										<div class="filters__item">
+											<div class="filters__title">Сортировка</div>
+											<div class="filters__row row-filters">
+												<div class="row-filters__item">
+													<input checked class="row-filters__radio" type="radio" id="price-4" name="price">
+													<label for="price-4" class="row-filters__label">Популярные</label>
+												</div>
+												<div class="row-filters__item">
+													<input class="row-filters__radio" type="radio" id="price-5" name="price">
+													<label for="price-5" class="row-filters__label">Дешевле</label>
+												</div>
+												<div class="row-filters__item">
+													<input class="row-filters__radio" type="radio" id="price-6" name="price">
+													<label for="price-6" class="row-filters__label">Более дорогие</label>
+												</div>
+											</div>
 										</div>
-										<a href="" class="product__title">TESTOSTERONE PROPIONATE TESTOSTERONE PROPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
+										<div class="filters__item">
+											<div class="filters__title">Категории</div>
+											<div class="filters__inner">
+												<button type="button" class="ocf-value ocf-checkbox ocf-selected filters__data">
+													<label class="filters__label">
+														<div class="filters__label--text">Оральные препараты</div>
+													</label>
+												</button>
+												<button type="button" class="filters__data ocf-value ocf-checkbox">
+													<label class="filters__label">
+														<div class="filters__label--text">Инъекционные препараты</div>
+													</label>
+												</button>
+												<button type="button" class="filters__data ocf-value ocf-checkbox">
+													<label class="filters__label">
+														<div class="filters__label--text">Пептиды</div>
+													</label>
+												</button>
+												<button type="button" class="filters__data ocf-value ocf-checkbox ocf-disabled">
+													<label class="filters__label">
+														<div class="filters__label--text">Гормон роста</div>
+													</label>
+												</button>
+												<button type="button" class="filters__data ocf-value ocf-checkbox">
+													<label class="filters__label">
+														<div class="filters__label--text">Гонадотропин</div>
+													</label>
+												</button>
+												<button type="button" class="filters__data ocf-value ocf-checkbox">
+													<label class="filters__label">
+														<div class="filters__label--text">Для потенции</div>
+													</label>
+												</button>
+												<button type="button" class="filters__data ocf-value ocf-checkbox">
+													<label class="filters__label">
+														<div class="filters__label--text">Семаглутид</div>
+													</label>
+												</button>
+												<button type="button" class="filters__data ocf-value ocf-checkbox">
+													<label class="filters__label">
+														<div class="filters__label--text">Модафинил</div>
+													</label>
+												</button>
+											</div>
 										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
+										<div class="filters__item">
+											<div class="filters__title">Бренд</div>
+											<div data-showmore="items" class="filters__block">
+												<div class="filters__inner" data-showmore-content="4">
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">BIOPHARM</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">CANADA</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">GENETIC</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">JINTROPIN</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">ORACLE</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">PFIZER</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">PRISMA</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">SOMATEX</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">THAIGER</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">VIRTUS</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">VORTEX</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">ZEROX</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">ZPHC</div>
+														</label>
+													</button>
+												</div>
+												<button hidden data-showmore-button type="button" class="filters__button--more">
+													<div class="filters__more _icon-arrow_more">
+														<span>Показать больше</span>
+														<span>Скрыть</span>
+													</div>
+												</button>
+											</div>
+										</div>
+										<div class="filters__item">
+											<div class="filters__title">Страна</div>
+											<div data-showmore="items" class="filters__block">
+												<div data-showmore-content="4" class="filters__inner">
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">Швейцария</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">Германия</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">Бельгия</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">Швейцария</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">США</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">Германия</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">Бельгия</div>
+														</label>
+													</button>
+												</div>
+												<button hidden data-showmore-button type="button" class="filters__button--more">
+													<div class="filters__more _icon-arrow_more">
+														<span>Показать больше</span>
+														<span>Скрыть</span>
+													</div>
+												</button>
+											</div>
+										</div>
+										<div class="filters__item">
+											<div class="filters__title">Форма выпуска</div>
+											<div data-showmore="items" class="filters__block">
+												<div data-showmore-content="4" class="filters__inner">
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">Иньекции</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">Таблетки</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">Порошок</div>
+														</label>
+													</button>
+												</div>
+												<button hidden data-showmore-button type="button" class="filters__button--more">
+													<div class="filters__more _icon-arrow_more">
+														<span>Показать больше</span>
+														<span>Скрыть</span>
+													</div>
+												</button>
+											</div>
+										</div>
+										<div class="filters__item">
+											<div class="filters__title">Ценовой диапазон</div>
+											<div class="filters__inner">
+												<div class="input-filters__input--wrap">
+													<input type="number" placeholder="От" class="input-filters__input">
+													<input type="number" placeholder="До" class="input-filters__input">
+												</div>
+												<button type="button" class="filters__mob w1 btn mod">Применить</button>
+											</div>
+										</div>
+										<div class="filters__item">
+											<div class="filters__title">Страна</div>
+											<div data-showmore="items" class="filters__block">
+												<div data-showmore-content="4" class="filters__inner">
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">Швейцария</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">Германия</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">Бельгия</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">Швейцария</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">США</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">Германия</div>
+														</label>
+													</button>
+													<button type="button" class="filters__data ocf-value ocf-checkbox">
+														<label class="filters__label">
+															<div class="filters__label--text">Бельгия</div>
+														</label>
+													</button>
+												</div>
+												<button hidden data-showmore-button type="button" class="filters__button--more">
+													<div class="filters__more _icon-arrow_more">
+														<span>Показать больше</span>
+														<span>Скрыть</span>
+													</div>
+												</button>
+											</div>
+										</div>
 									</div>
 								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-							<div class="product__slide disabled swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/2.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__favorite _icon-favorite-1"></button>
-										</div>
-										<a href="" class="product__title">TESTOSTERONE CYPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
-										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
-									</div>
-								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-							<div class="product__slide swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/1.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__add _icon-bag">Добавить в корзину</button>
-											<button type="button" class="product__favorite _icon-favorite-1"></button>
-										</div>
-										<a href="" class="product__title">TESTOSTERONE PROPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
-										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
-									</div>
-								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-							<div class="product__slide swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/1.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__add _icon-bag">Добавить в корзину</button>
-											<button type="button" class="product__favorite _icon-favorite-1"></button>
-										</div>
-										<a href="" class="product__title">TESTOSTERONE PROPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
-										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
-									</div>
-								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-							<div class="product__slide swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/1.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__add _icon-bag">Добавить в корзину</button>
-											<button type="button" class="product__favorite _icon-favorite-1"></button>
-										</div>
-										<a href="" class="product__title">TESTOSTERONE PROPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
-										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
-									</div>
-								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-							<div class="product__slide swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/1.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__add _icon-bag">Добавить в корзину</button>
-											<button type="button" class="product__favorite _icon-favorite-1"></button>
-										</div>
-										<a href="" class="product__title">TESTOSTERONE PROPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
-										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
-									</div>
-								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-							<div class="product__slide swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/1.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__add _icon-bag">Добавить в корзину</button>
-											<button type="button" class="product__favorite _icon-favorite-1"></button>
-										</div>
-										<a href="" class="product__title">TESTOSTERONE PROPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
-										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
-									</div>
-								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-							<div class="product__slide swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/1.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__add _icon-bag">Добавить в корзину</button>
-											<button type="button" class="product__favorite _icon-favorite-1"></button>
-										</div>
-										<a href="" class="product__title">TESTOSTERONE PROPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
-										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
-									</div>
-								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="manufacturers">
-				<div class="manufacturers__container">
-					<div class="manufacturers__wrapper">
-						<a href="" class="manufacturers__link">BIOPHARM</a>
-						<a href="" class="manufacturers__link">CANADA</a>
-						<a href="" class="manufacturers__link">GENETIC</a>
-						<a href="" class="manufacturers__link">JINTROPIN</a>
-						<a href="" class="manufacturers__link">ORACLE</a>
-						<a href="" class="manufacturers__link">PFIZER</a>
-						<a href="" class="manufacturers__link">PRISMA</a>
-						<a href="" class="manufacturers__link">SOMATEX</a>
-						<a href="" class="manufacturers__link">THAIGER</a>
-						<a href="" class="manufacturers__link">VIRTUS</a>
-						<a href="" class="manufacturers__link">VORTEX</a>
-						<a href="" class="manufacturers__link">ZEROX</a>
-						<a href="" class="manufacturers__link">ZPHC</a>
-					</div>
-				</div>
-			</section>
-			<section class="product">
-				<div class="product__container">
-					<div class="product__slider swiper">
-						<div class="product__top">
-							<h3 class="product__title--top">Рекомендуемые товары</h3>
-							<div class="product__block">
-								<a href="" class="product__link">Посмотреть все</a>
-								<button type="button" class="product__swiper-button product__swiper-button-prev _icon-arrow_btn"></button>
-								<button type="button" class="product__swiper-button product__swiper-button-next _icon-arrow_btn"></button>
-							</div>
-						</div>
-						<div class="product__wrapper swiper-wrapper">
-							<div class="product__slide swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/1.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__add _icon-bag added">Добавить в корзину</button>
-											<button type="button" class="product__favorite _icon-favorite-1 active"></button>
-										</div>
-										<a href="" class="product__title">TESTOSTERONE PROPIONATE TESTOSTERONE PROPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
-										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
-									</div>
-								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-							<div class="product__slide disabled swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/2.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__favorite _icon-favorite-1"></button>
-										</div>
-										<a href="" class="product__title">TESTOSTERONE CYPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
-										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
-									</div>
-								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-							<div class="product__slide swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/1.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__add _icon-bag">Добавить в корзину</button>
-											<button type="button" class="product__favorite _icon-favorite-1"></button>
-										</div>
-										<a href="" class="product__title">TESTOSTERONE PROPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
-										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
-									</div>
-								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-							<div class="product__slide swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/1.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__add _icon-bag">Добавить в корзину</button>
-											<button type="button" class="product__favorite _icon-favorite-1"></button>
-										</div>
-										<a href="" class="product__title">TESTOSTERONE PROPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
-										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
-									</div>
-								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-							<div class="product__slide swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/1.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__add _icon-bag">Добавить в корзину</button>
-											<button type="button" class="product__favorite _icon-favorite-1"></button>
-										</div>
-										<a href="" class="product__title">TESTOSTERONE PROPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
-										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
-									</div>
-								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-							<div class="product__slide swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/1.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__add _icon-bag">Добавить в корзину</button>
-											<button type="button" class="product__favorite _icon-favorite-1"></button>
-										</div>
-										<a href="" class="product__title">TESTOSTERONE PROPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
-										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
-									</div>
-								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-							<div class="product__slide swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/1.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__add _icon-bag">Добавить в корзину</button>
-											<button type="button" class="product__favorite _icon-favorite-1"></button>
-										</div>
-										<a href="" class="product__title">TESTOSTERONE PROPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
-										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
-									</div>
-								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-							<div class="product__slide swiper-slide">
-								<a href="" class="product__image--wrap">
-									<div class="product__image lazy_image">
-										<img data-src="img/products/10ml-Injections/1.webp" alt="">
-									</div>
-								</a>
-								<div class="product__content">
-									<div class="product__row">
-										<div class="product__wrap">
-											<button type="button" class="product__add _icon-bag">Добавить в корзину</button>
-											<button type="button" class="product__favorite _icon-favorite-1"></button>
-										</div>
-										<a href="" class="product__title">TESTOSTERONE PROPIONATE</a>
-									</div>
-									<div class="product__copy">
-										<div class="product__code--wrap">
-											<div class="product__code--text">Код: </div>
-											<div class="product__code"> S2350135</div>
-										</div>
-										<button type="button" class="product__icon _icon-copy"></button>
-									</div>
-									<div class="product__price--wrap">
-										<div class="product__price--old">4383 тенге</div>
-										<div class="product__price">3279 тенге</div>
-									</div>
-								</div>
-								<button data-popup="#popup-quick-order" class="product__buy btn">Быстрая покупка</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="about-us">
-				<div class="about-us__container">
-					<div class="about-us__wrapper">
-						<div class="about-us__box">
-							<div class="about-us__figure">
-								<div class="about-us__image lazy_image">
-									<img data-src="img/main/about-image.webp" alt="">
-								</div>
-							</div>
-							<div class="about-us__info">
-								<div class="about-us__inner">
-									<div class="about-us__descr text-l">стабильность<br>и качество</div>
+								<div class="filters__mob--bottom">
+									<button type="button" class="filters__mob btn mod">Показать <b class="ocf-btn-label">367</b> товаров
+									</button>
+									<button type="button" class="filters__mob btn bb">Очистить</button>
 								</div>
 							</div>
 						</div>
-						<div class="about-us__content">
-							<div class="about-us__top top">
-								<div class="top__subtitle">О нас</div>
-								<div class="top__title h3">Мы – №1 в Казахстане по продаже оригинального гормона роста</div>
+						<div class="catalogue__models models-empty">
+							<div class="models-empty__image _icon-error"></div>
+							<h5 class="models-empty__title">По вашему запросу ничего не найдено</h5>
+							<div class="models-empty__text">
+								<p>Проверьте правописание или попробуйте использовать другой фильтр</p>
 							</div>
-							<div class="about-us__text text-m">
-								<ul>
-									<li>Работаем напрямую с ведущими мировыми производителями</li>
-									<li>100% оригинальность каждого препарата</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="blog">
-				<div class="blog__container">
-					<div class="blog__top product__top">
-						<h3 class="product__title--top">Блог</h3>
-						<div class="product__block">
-							<a href="" class="product__link">Посмотреть все</a>
-							<button type="button" class="blog__swiper-button blog__swiper-button-prev _icon-arrow_btn"></button>
-							<button type="button" class="blog__swiper-button blog__swiper-button-next _icon-arrow_btn"></button>
-						</div>
-					</div>
-					<div class="blog__slider swiper">
-						<div class="blog__wrapper swiper-wrapper">
-							<a href="" class="blog__slide swiper-slide">
-								<div class="blog__item">
-									<div class="blog__head">
-										<div class="blog__image lazy_image">
-											<img data-src="img/blog/1.webp" alt="">
-										</div>
-										<div class="blog__text">Прочитать больше</div>
-									</div>
-									<div class="blog__content">
-										<div class="blog__date">11 февраля 2025</div>
-										<div class="blog__title h5">8 Secrets Of People Who Never Get Sick</div>
-										<div class="blog__descr">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis.</div>
-									</div>
-								</div>
-							</a>
-							<a href="" class="blog__slide swiper-slide">
-								<div class="blog__item">
-									<div class="blog__head">
-										<div class="blog__image lazy_image">
-											<img data-src="img/blog/2.webp" alt="">
-										</div>
-										<div class="blog__text">Прочитать больше</div>
-									</div>
-									<div class="blog__content">
-										<div class="blog__date">11 февраля 2025</div>
-										<div class="blog__title h5">8 Secrets Of People </div>
-										<div class="blog__descr">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis.</div>
-									</div>
-								</div>
-							</a>
-							<a href="" class="blog__slide swiper-slide">
-								<div class="blog__item">
-									<div class="blog__head">
-										<div class="blog__image lazy_image">
-											<img data-src="img/blog/3.webp" alt="">
-										</div>
-										<div class="blog__text">Прочитать больше</div>
-									</div>
-									<div class="blog__content">
-										<div class="blog__date">11 февраля 2025</div>
-										<div class="blog__title h5">8 Secrets Of People Who Never Get Sick</div>
-										<div class="blog__descr">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis.</div>
-									</div>
-								</div>
-							</a>
-							<a href="" class="blog__slide swiper-slide">
-								<div class="blog__item">
-									<div class="blog__head">
-										<div class="blog__image lazy_image">
-											<img data-src="img/blog/4.webp" alt="">
-										</div>
-										<div class="blog__text">Прочитать больше</div>
-									</div>
-									<div class="blog__content">
-										<div class="blog__date">11 февраля 2025</div>
-										<div class="blog__title h5">8 Secrets Of People Who Never Get Sick</div>
-										<div class="blog__descr">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis.</div>
-									</div>
-								</div>
-							</a>
-							<a href="" class="blog__slide swiper-slide">
-								<div class="blog__item">
-									<div class="blog__head">
-										<div class="blog__image lazy_image">
-											<img data-src="img/blog/5.webp" alt="">
-										</div>
-										<div class="blog__text">Прочитать больше</div>
-									</div>
-									<div class="blog__content">
-										<div class="blog__date">11 февраля 2025</div>
-										<div class="blog__title h5">8 Secrets Of People Who Never Get Sick</div>
-										<div class="blog__descr">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis.</div>
-									</div>
-								</div>
-							</a>
+							<a href="" class="models-empty__link btn mod">Вернуться назад</a>
 						</div>
 					</div>
 				</div>
